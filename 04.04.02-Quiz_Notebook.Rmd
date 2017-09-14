@@ -1,0 +1,112 @@
+---
+title: "04.04.02-Quiz Notebook"
+output:
+  pdf_document: default
+  html_notebook: default
+  html_document: default
+---
+
+Import the .R files to the environment;
+```{r}
+source("best.R")
+source("rankhospital.R")
+source("rankall.R")
+```
+
+### Question 1
+What result is returned by the following code?
+```
+best("SC", "heart attack")
+```
+```{r Question 1, echo=TRUE}
+best("SC", "heart attack")
+```
+
+### Question 2
+What result is returned by the following code?
+```
+best("NY", "pneumonia")
+```
+```{r Question 2, echo=TRUE}
+best("NY", "pneumonia")
+```
+
+### Question 3
+What result is returned by the following code?
+```
+best("AK", "pneumonia")
+```
+```{r Question 3, echo=TRUE}
+best("AK", "pneumonia")
+```
+
+### Question 4
+What result is returned by the following code?
+```
+rankhospital("NC", "heart attack", 
+  "worst")
+```
+```{r Question 4, echo=TRUE}
+rankhospital("NC", "heart attack", 
+  "worst")
+```
+
+### Question 5
+What result is returned by the following code?
+```
+rankhospital("WA", "heart attack", 7)
+```
+```{r Question 5, echo=TRUE}
+rankhospital("WA", "heart attack", 7)
+```
+
+### Question 6
+What result is returned by the following code?
+```
+rankhospital("TX", "pneumonia", 10)
+```
+```{r Question 6, echo=TRUE}
+rankhospital("TX", "pneumonia", 10)
+```
+
+### Question 7
+What result is returned by the following code?
+```
+rankhospital("NY", "heart attack", 7)
+```
+```{r Question 7, echo=TRUE}
+rankhospital("NY", "heart attack", 7)
+```
+
+### Question 8
+What result is returned by the following code?
+```
+r <- rankall("heart attack", 4)
+as.character(subset(r, state == "HI")$hospital)
+```
+```{r Question 8, echo=TRUE}
+r <- rankall("heart attack", 4)
+as.character(subset(r, state == "HI")$hospital)
+```
+
+### Question 9
+What result is returned by the following code?
+```
+r <- rankall("pneumonia", "worst")
+as.character(subset(r, state == "NJ")$hospital)
+```
+```{r Question 9, echo=TRUE}
+r <- rankall("pneumonia", "worst")
+as.character(subset(r, state == "NJ")$hospital)
+```
+
+### Question 10
+What result is returned by the following code?
+```
+r <- rankall("heart failure", 10)
+as.character(subset(r, state == "NV")$hospital)
+```
+```{r Question 10, echo=TRUE}
+r <- rankall("heart failure", 10)
+as.character(subset(r, state == "NV")$hospital)
+```
